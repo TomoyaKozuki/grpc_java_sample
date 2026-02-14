@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+option java_package  = "com.example.grpc.sample";
+option java_multiple_files = true;
+
+//サービス（通信の窓口）の定義
+service GreetService{
+    rpc SayHello (HelloRequest) returns (HelloResponse);
+}
+
+//送るデータ
+message HelloRequest{
+    string name = 1;
+}
+
+//送ってくるデータ
+message HelloResponse{
+    string message = 1;
+}
+

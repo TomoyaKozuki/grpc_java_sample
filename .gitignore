@@ -1,0 +1,46 @@
+# Gradle
+.gradle/
+build/
+
+# IDE
+.vscode/
+.idea/
+*.iml
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# VS キャッシュ
+.vs/
+.vscode/
+
+# ビルド結果
+Debug/
+Release/
+x64/
+x86/
+out/
+build/
+
+# 中間ファイル
+# *.obj
+*.pdb
+*.ilk
+*.idb
+
+# 一時ファイル
+*.log
+*.tmp
+*.cache
+*.user
+
+# トレース
+*.tlog
+
+# データベース
+*.db
+*.opendb

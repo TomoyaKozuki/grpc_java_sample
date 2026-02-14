@@ -1,0 +1,51 @@
+plugins {
+    id 'java' // Java開発の標準機能をセットアップ
+    id 'com.google.protobuf' version '0.9.4' // protoファイルからのコード生成機能をセットアップ
+}
+
+group = 'com.example'
+version = '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral() // ライブラリをダウンロードする場所（世界共通の倉庫）
+}
+
+dependencies {
+    // gRPCを使うために必要な「部品」たち
+    implementation 'io.grpc:grpc-netty-shaded:1.69.0'
+    implementation 'io.grpc:grpc-protobuf:1.69.0'
+    implementation 'io.grpc:grpc-stub:1.69.0'
+    
+    // Java 9以降でエラーにならないために必要なアノテーションライブラリ
+    compileOnly 'javax.annotation:javax.annotation-api:1.3.2'
+}
+
+protobuf {
+    // プロトコルバッファの翻訳機（protoc）の設定
+    protoc {
+        artifact = "com.google.protobuf:protoc:3.25.1"
+    }
+    // gRPC用のコードも同時に生成するためのプラグイン設定
+    plugins {
+        grpc {
+            artifact = 'io.grpc:protoc-gen-grpc-java:1.69.0'
+        }
+    }
+    generateProtoTasks {
+        all()*.plugins {
+            grpc {}
+        }
+    }
+}
+
+// サーバーを起動するためのタスク
+task runServer(type: JavaExec) {
+    classpath = sourceSets.main.runtimeClasspath
+    mainClass = 'com.example.grpc.sample.SimpleServer'
+}
+
+// クライアントを起動するためのタスク
+task runClient(type: JavaExec) {
+    classpath = sourceSets.main.runtimeClasspath
+    mainClass = 'com.example.grpc.sample.SimpleClient'
+}
