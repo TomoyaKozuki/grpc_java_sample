@@ -58,3 +58,25 @@ Protocol Buffersによって定義したデータ構造（.protoファイル）�
 # macOS / Linux
 ./gradlew runClient
 ```
+正常に実行されると以下の出力が表示されます。
+```サーバー側
+> Task :runServer
+Server started...
+Received: Java-User
+```
+```クライアント側
+> Task :runClient
+Response from server: Hello, Java-User! This is Java Server.
+
+[Incubating] Problems report is available at: file:///C:/Users/PC_User/Downloads/grpc_java_sample-main/grpc_java_sample-main/manager_java/build/reports/problems/problems-report.html
+
+Deprecated Gradle features were used in this build, making it incompatible with Gradle 10.
+
+You can use '--warning-mode all' to show the individual deprecation warnings and determine if they come from your own scripts or plugins.
+
+For more on this, please refer to https://docs.gradle.org/9.3.1/userguide/command_line_interface.html#sec:command_line_warnings in the Gradle documentation.
+
+BUILD SUCCESSFUL in 1s
+6 actionable tasks: 1 executed, 5 up-to-date
+Consider enabling configuration cache to speed up this build: https://docs.gradle.org/9.3.1/userguide/configuration_cache_enabling.html
+```
