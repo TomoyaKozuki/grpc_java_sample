@@ -19,7 +19,7 @@ HTTP/1.1では、ウェブサーバーに対して原則１つずつしかリク
 Protocol Buffersによって定義したデータ構造（.protoファイル）を、protocコンパイラを通すことで各言語に対応したコードを自動的に生成する。（Javaの場合./gradlew generateProto）
 
 ## フォルダ構成
-'''
+```
 .
 ├── gradlew              # macOS/Linux用実行スクリプト
 ├── gradlew.bat          # Windows用実行スクリプト
@@ -29,5 +29,5 @@ Protocol Buffersによって定義したデータ構造（.protoファイル）�
 │   │   ├── proto/       # .proto ファイル（通信の設計図）
 │   │   └── java/        # サーバー・クライアントの実装コード
 └── build.gradle         # ビルド設定（gRPCプラグイン等）
-'''
+```
 ## サーバー・クライアントの実行手順
