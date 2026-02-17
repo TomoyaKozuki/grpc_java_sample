@@ -18,4 +18,16 @@ HTTP/1.1では、ウェブサーバーに対して原則１つずつしかリク
 データ構造をシリアライズ（バイナリ形式に変換）及び、デシアライズを効率的に行うための方法。
 Protocol Buffersによって定義したデータ構造（.protoファイル）を、protocコンパイラを通すことで各言語に対応したコードを自動的に生成する。（Javaの場合./gradlew generateProto）
 
+## フォルダ構成
+'''
+.
+├── gradlew              # macOS/Linux用実行スクリプト
+├── gradlew.bat          # Windows用実行スクリプト
+├── gradle/wrapper/      # Gradle本体のダウンロード用設定
+├── src/
+│   ├── main/
+│   │   ├── proto/       # .proto ファイル（通信の設計図）
+│   │   └── java/        # サーバー・クライアントの実装コード
+└── build.gradle         # ビルド設定（gRPCプラグイン等）
+'''
 ## サーバー・クライアントの実行手順
