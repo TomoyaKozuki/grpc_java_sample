@@ -18,7 +18,7 @@ HTTP/1.1では、ウェブサーバーに対して原則１つずつしかリク
 データ構造をシリアライズ（バイナリ形式に変換）及び、デシアライズを効率的に行うための方法。
 Protocol Buffersによって定義したデータ構造（.protoファイル）を、protocコンパイラを通すことで各言語に対応したコードを自動的に生成する。（Javaの場合./gradlew generateProto）
 
-## フォルダ構成
+##ディレクトリ構成
 ```
 .
 ├── gradlew              # macOS/Linux用実行スクリプト
@@ -31,3 +31,30 @@ Protocol Buffersによって定義したデータ構造（.protoファイル）�
 └── build.gradle         # ビルド設定（gRPCプラグイン等）
 ```
 ## サーバー・クライアントの実行手順
+### コードの自動生成
+.protoファイルからJavaの通信用スタブコードを自動生成します。
+```
+# Windows
+.\gradlew.bat generateProto
+
+# macOS / Linux
+./gradlew generateProto
+```
+### サーバーの起動
+サーバープログラムを起動し、クライアントからの接続待ち状態にします。
+```
+# Windows
+.\gradlew.bat runServer
+
+# macOS / Linux
+./gradlew runServer
+```
+### クライアントの実行
+新しいターミナルを開き、サーバーが起動していることを確認してからクライアントを実行してください。
+```
+# Windows
+.\gradlew.bat runClient
+
+# macOS / Linux
+./gradlew runClient
+```
