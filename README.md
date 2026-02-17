@@ -58,13 +58,16 @@ Protocol Buffersによって定義したデータ構造（.protoファイル）�
 # macOS / Linux
 ./gradlew runClient
 ```
+## 実行結果の確認
 正常に実行されると以下の出力が表示されます。
-```サーバー側
+サーバー側：
+```
 > Task :runServer
 Server started...
 Received: Java-User
 ```
-```クライアント側
+クライアント側：
+```
 > Task :runClient
 Response from server: Hello, Java-User! This is Java Server.
 
