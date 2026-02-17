@@ -12,4 +12,4 @@ RPC（Remote Protocol Call）の一種であるRPCを用いた簡易的なサー
 HTTP/1.1では、ウェブサーバーに対して原則１つずつしかリクエストを送信することができなかったため、HTTP/2の登場により従来の通信プロトコルよりも通信の効率を改善させることができた。
 ### Protocol Buffers
 データ構造をシリアライズ（バイナリ形式に変換）及び、デシアライズを効率的に行うための方法。
-Protocol Buffersによって定義したデータ構造（.protoファイル）は、protocコンパイラを通すことで各言語に対応したコードを自動的に生成する。（Javaの場合./gradlew generateProto）
+Protocol Buffersによって定義したデータ構造（.protoファイル）を、protocコンパイラを通すことで各言語に対応したコードを自動的に生成する。（Javaの場合./gradlew generateProto）
